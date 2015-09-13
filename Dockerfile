@@ -1,6 +1,8 @@
-FROM r-base:latest
+FROM rocker/hadleyverse:latest
 
-MAINTAINER Winston Chang "winston@rstudio.com"
+MAINTAINER Shrek Tan "shrektan@126.com"
+
+# Winston Chang's shiny server code
 
 RUN apt-get update && apt-get install -y \
     sudo \
@@ -32,3 +34,49 @@ EXPOSE 3838
 COPY shiny-server.sh /usr/bin/shiny-server.sh
 
 CMD ["/usr/bin/shiny-server.sh"]
+
+# Shrek's own working environment
+
+RUN apt-get update && apt-get install -y \
+    libssh2-1-dev
+
+# CRAN version packages
+
+# if you build the image directly in China, maybe you can replace the repos with https://mirrors.tuna.tsinghua.edu.cn/CRAN/
+
+RUN install2.r --error \
+    devtools \
+    ggthemes \
+    ggplot2 \
+    grid \
+    gridExtra \
+    RColorBrewer \
+    scales \
+    ggthemr \
+    knitr \
+    xtable \
+    rmarkdown \
+    lubridate \
+    stringr \
+    dplyr \
+    tidyr \
+    readr \
+    openxlsx \
+    xts \
+    PerformanceAnalytics \
+    shiny \
+    shinythemes \
+    shinydashboard \
+    dygraphs \
+    DiagrammeR \
+    R6 \
+    V8 \
+    testthat \
+    leaflet
+
+# Github version packages
+RUN R -e "devtools::install_github('Rdatatable/data.table')"
+RUN R -e "devtools::install_github('daattali/shinyjs')"
+RUN R -e "devtools::install_github('rstudio/DT')"
+RUN R -e "devtools::install_github('ebailey78/shinyBS', ref = 'shinyBS3')"
+
