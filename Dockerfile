@@ -39,25 +39,16 @@ CMD ["/usr/bin/shiny-server.sh"]
 
 # CRAN version packages
 
-# if you build the image directly in China, maybe you can replace the repos with https://mirrors.tuna.tsinghua.edu.cn/CRAN/
+# install2.r is an cmd of linux by import litter. If the package is not available in CRAN, it will stop.
 
 RUN install2.r --error \
-    devtools \
     ggthemes \
-    ggplot2 \
-    grid \
-    gridExtra \
     RColorBrewer \
-    scales \
-    ggthemr \
     knitr \
     xtable \
     rmarkdown \
     lubridate \
     stringr \
-    dplyr \
-    tidyr \
-    readr \
     openxlsx \
     xts \
     PerformanceAnalytics \
@@ -68,12 +59,12 @@ RUN install2.r --error \
     DiagrammeR \
     R6 \
     V8 \
-    testthat \
-    leaflet
+    leaflet \
+  && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 # Github version packages
 RUN R -e "devtools::install_github('Rdatatable/data.table')"
 RUN R -e "devtools::install_github('daattali/shinyjs')"
 RUN R -e "devtools::install_github('rstudio/DT')"
 RUN R -e "devtools::install_github('ebailey78/shinyBS', ref = 'shinyBS3')"
-
+RUN R -e "devtools::install_github('cttobin/ggthemr')"
