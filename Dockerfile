@@ -37,10 +37,6 @@ CMD ["/usr/bin/shiny-server.sh"]
 
 # Shrek's own working environment
 
-RUN apt-get update && apt-get install -y \
-    libgcrypt20-dev \
-    libssh2-1-dev
-
 # CRAN version packages
 
 # if you build the image directly in China, maybe you can replace the repos with https://mirrors.tuna.tsinghua.edu.cn/CRAN/
