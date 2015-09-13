@@ -38,6 +38,7 @@ CMD ["/usr/bin/shiny-server.sh"]
 # Shrek's own working environment
 
 RUN apt-get update && apt-get install -y \
+    libgcrypt20-dev \
     libssh2-1-dev
 
 # CRAN version packages
