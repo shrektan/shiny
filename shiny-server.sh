@@ -7,7 +7,7 @@ mkdir -p /var/log/shiny-server
 sudo chown -R shiny /srv/shiny-server/* # should have the writing access by default
 chown shiny.shiny /var/log/shiny-server
 
-source shiny-server >> /var/log/shiny-server.log 2>&1
+shiny-server >> /var/log/shiny-server.log 2>&1
 
 # RUN RStudioServer
 
@@ -16,4 +16,4 @@ sudo mkdir -p /var/log/supervisor \
 	  && chmod g+w /var/log/supervisor \
 	  && chgrp staff /etc/supervisor/conf.d/supervisord.conf
 
-source /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf
+exec /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf
