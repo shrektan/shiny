@@ -70,5 +70,8 @@ RUN R -e "devtools::install_github('cttobin/ggthemr')"
 RUN R -e "devtools::install_github('imanuelcostigan/RSQLServer')"
 
 # Make semi ENTRYPOINT
+COPY rstudio-server.sh /usr/bin/rstudio-server.sh
 
 CMD ["/usr/bin/shiny-server.sh"]
+
+# If you want to execute rstudio-server, you have to `docker exec shinyserver RUN /usr/bin/rstudio-server.sh after the container has been established.
