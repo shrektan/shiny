@@ -1,40 +1,27 @@
 Docker for Shiny Server
 =======================
 
-This is a Dockerfile for Shiny Server on Debian "testing". It is based on the r-base image.
+This is a Dockerfile of my own working environment, which is based on rocker/shiny and rocker/hadleyverse. 
 
-The image is available from [Docker Hub](https://registry.hub.docker.com/u/rocker/shiny/).
+The image is available from [Docker Hub](https://hub.docker.com/r/shrektan/shiny/).
+
+## Warning
+
+I'm still working on it. Things will change!
+
+## What's inside
+
+- shiny server
+- rstudio server
+- database connection, including rsqlserver (using rjdbc), ROracle (with Oracle instant client), RODBC (with unixODBC)
+
+## The goal
+
+I will try to establish a clear and handy working process to establish the R working environment (maybe not suitable for everyone, but at least it would be kind of suitable for people who're working in the financial industry).
 
 ## Usage:
 
-To run a temporary container with Shiny Server:
-
-```sh
-docker run --rm -p 3838:3838 rocker/shiny
-```
-
-
-To expose a directory on the host to the container use `-v <host_dir>:<container_dir>`. The following command will use one `/srv/shinyapps` as the Shiny app directory and `/srv/shinylog` as the directory for logs. Note that if the directories on the host don't already exist, they will be created automatically.:
-
-```sh
-docker run --rm -p 3838:3838 \
-    -v /srv/shinyapps/:/srv/shiny-server/ \
-    -v /srv/shinylog/:/var/log/ \
-    rocker/shiny
-```
-
-If you have an app in /srv/shinyapps/appdir, you can run the app by visiting http://localhost:3838/appdir/. (If using boot2docker, visit http://192.168.59.103:3838/appdir/)
-
-
-In a real deployment scenario, you will probably want to run the container in detached mode (`-d`) and listening on the host's port 80 (`-p 80:3838`):
-
-```sh
-docker run -d -p 80:3838 \
-    -v /srv/shinyapps/:/srv/shiny-server/ \
-    -v /srv/shinylog/:/var/log/ \
-    rocker/shiny
-```
-
+In process.
 
 ## Trademarks
 
