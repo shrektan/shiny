@@ -58,6 +58,7 @@ RUN install2.r --error \
     R6 \
     V8 \
     leaflet \
+    RJDBC \
   && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 # Github version packages
@@ -66,6 +67,7 @@ RUN R -e "devtools::install_github('daattali/shinyjs')"
 RUN R -e "devtools::install_github('rstudio/DT')"
 RUN R -e "devtools::install_github('ebailey78/shinyBS', ref = 'shinyBS3')"
 RUN R -e "devtools::install_github('cttobin/ggthemr')"
+RUN R -e "devtools::install_github('imanuelcostigan/RSQLServer')"
 
 # Make semi ENTRYPOINT
 
