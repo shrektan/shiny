@@ -33,8 +33,6 @@ EXPOSE 3838
 
 COPY shiny-server.sh /usr/bin/shiny-server.sh
 
-CMD ["/usr/bin/shiny-server.sh"]
-
 # Shrek's own working environment
 
 # CRAN version packages
@@ -68,3 +66,7 @@ RUN R -e "devtools::install_github('daattali/shinyjs')"
 RUN R -e "devtools::install_github('rstudio/DT')"
 RUN R -e "devtools::install_github('ebailey78/shinyBS', ref = 'shinyBS3')"
 RUN R -e "devtools::install_github('cttobin/ggthemr')"
+
+# Make semi ENTRYPOINT
+
+CMD ["/usr/bin/shiny-server.sh"]
