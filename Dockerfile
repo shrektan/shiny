@@ -76,6 +76,21 @@ RUN R -e "devtools::install_github('imanuelcostigan/RSQLServer')"
 RUN R -e "devtools::install_github('ebailey78/shinyBS', ref = 'shinyBS3')"
 RUN R -e "devtools::install_github('daattali/shinyjs')"
 
+# Install Oracle
+export OCI_LIB=/scratch/instantclient
+export LD_LIBRARY_PATH=/scratch/instantclient:$LD_LIBRARY_PATH
+export TNS_ADMIN=/scratch/instantclient/NETWORK/admin/
+export NLS_LANG="SIMPLIFIED CHINESE_CHINA.ZHS16GBK"
+
+mkdir /scratch
+mkdir /scratch/instantclient
+
+sudo cp -R /srv/shiny-server/pkgs-debian/instantclient_12_1/* /scratch/instantclient
+cd /scratch/instantclient/
+ln -s libclntsh.so.12.1 libclntsh.so
+
+R CMD INSTALL /srv/shiny-server/pkgs-R/ROracle_1.2-1.tar.gz
+
 # Make semi ENTRYPOINT
 COPY rstudio-server.sh /usr/bin/rstudio-server.sh
 
