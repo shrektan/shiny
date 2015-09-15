@@ -35,39 +35,46 @@ COPY shiny-server.sh /usr/bin/shiny-server.sh
 
 # Shrek's own working environment
 
+# Install Database related apt
+RUN apt-get update && apt-get install -y \
+    libaio1 \
+    unixODBC-dev
+
 # CRAN version packages
 
 # install2.r is an cmd of linux by import litter. If the package is not available in CRAN, it will stop.
 
 RUN install2.r --error \
+    dygraphs \
+    DiagrammeR \
     ggthemes \
-    RColorBrewer \
     knitr \
-    xtable \
-    rmarkdown \
+    leaflet \
     lubridate \
-    stringr \
     openxlsx \
-    xts \
     PerformanceAnalytics \
+    R6 \
+    RColorBrewer \
+    RJDBC \
+    RJSONIO \
+    rmarkdown \
     shiny \
     shinythemes \
     shinydashboard \
-    dygraphs \
-    DiagrammeR \
-    R6 \
+    stringr \
+    RODBC \
     V8 \
-    leaflet \
-    RJDBC \
+    xtable \
+    xts \
   && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 # Github version packages
 RUN R -e "devtools::install_github('Rdatatable/data.table')"
-RUN R -e "devtools::install_github('daattali/shinyjs')"
 RUN R -e "devtools::install_github('rstudio/DT')"
-RUN R -e "devtools::install_github('ebailey78/shinyBS', ref = 'shinyBS3')"
 RUN R -e "devtools::install_github('cttobin/ggthemr')"
 RUN R -e "devtools::install_github('imanuelcostigan/RSQLServer')"
+RUN R -e "devtools::install_github('ebailey78/shinyBS', ref = 'shinyBS3')"
+RUN R -e "devtools::install_github('daattali/shinyjs')"
 
 # Make semi ENTRYPOINT
 COPY rstudio-server.sh /usr/bin/rstudio-server.sh
