@@ -51,6 +51,7 @@ RUN install2.r --error \
     knitr \
     leaflet \
     lubridate \
+    mailR \
     openxlsx \
     PerformanceAnalytics \
     R6 \
