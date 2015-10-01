@@ -54,6 +54,7 @@ RUN install2.r --error \
     knitr \
     leaflet \
     lubridate \
+    mailR \
     openxlsx \
     PerformanceAnalytics \
     R6 \
@@ -75,9 +76,11 @@ RUN install2.r --error \
 RUN R -e "devtools::install_github('Rdatatable/data.table')"
 RUN R -e "devtools::install_github('rstudio/DT')"
 RUN R -e "devtools::install_github('cttobin/ggthemr')"
+RUN R -e "devtools::install_github('hadley/httr')"
 RUN R -e "devtools::install_github('imanuelcostigan/RSQLServer')"
 RUN R -e "devtools::install_github('ebailey78/shinyBS', ref = 'shinyBS3')"
 RUN R -e "devtools::install_github('daattali/shinyjs')"
+RUN R -e "devtools::install_github('trestletech/shinyStore')"
 
 EXPOSE 443
 
