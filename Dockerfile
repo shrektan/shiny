@@ -38,7 +38,10 @@ COPY shiny-server.sh /usr/bin/shiny-server.sh
 # Install Database related apt
 RUN apt-get update && apt-get install -y \
     libaio1 \
-    unixODBC-dev
+    unixODBC-dev \
+    apache2 \
+    libapache2-mod-auth-openidc \
+    curl
 
 # CRAN version packages
 
@@ -75,6 +78,8 @@ RUN R -e "devtools::install_github('cttobin/ggthemr')"
 RUN R -e "devtools::install_github('imanuelcostigan/RSQLServer')"
 RUN R -e "devtools::install_github('ebailey78/shinyBS', ref = 'shinyBS3')"
 RUN R -e "devtools::install_github('daattali/shinyjs')"
+
+EXPOSE 443
 
 # Make semi ENTRYPOINT
 COPY rstudio-server.sh /usr/bin/rstudio-server.sh

@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# RUN apache
+sudo a2enmod proxy_http
+sudo a2enmod auth_openidc
+sudo service apache2 restart
+
 # ShinyServer: Make sure the directory for individual app logs exists
 mkdir -p /var/log/shiny-server
 sudo chown -R shiny /srv/shiny-server/* # should have the writing access by default
