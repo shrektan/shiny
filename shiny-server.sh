@@ -2,7 +2,8 @@
 
 # ShinyServer: Make sure the directory for individual app logs exists
 mkdir -p /var/log/shiny-server
-sudo chown -R shiny /srv/shiny-server/* # should have the writing access by default
+mkdir -p /srv/shiny-server/
+chown shiny.shiny /srv/shiny-server/ # should have the writing access by default
 chown shiny.shiny /var/log/shiny-server
 
 # RUN ShinyServer
