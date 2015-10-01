@@ -3,6 +3,7 @@
 # RUN apache
 sudo a2enmod proxy_http
 sudo a2enmod auth_openidc
+sudo a2enmod ssl
 sudo service apache2 restart
 
 # ShinyServer: Make sure the directory for individual app logs exists
