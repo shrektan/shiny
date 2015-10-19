@@ -48,12 +48,14 @@ RUN install2.r --error \
     dygraphs \
     DiagrammeR \
     ggthemes \
+    jsonlite \
     knitr \
     leaflet \
     lubridate \
     mailR \
     openxlsx \
     PerformanceAnalytics \
+    PKI \
     R6 \
     RColorBrewer \
     RJDBC \
