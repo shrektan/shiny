@@ -1,6 +1,8 @@
 Docker for Shiny Server
 =======================
 
+It's an antomated build docker image from [Github shrektan/shiny](https://github.com/shrektan/shiny).
+
 This is a Dockerfile of my own working environment, which is based on rocker/shiny and rocker/hadleyverse. 
 
 The image is available from [Docker Hub](https://hub.docker.com/r/shrektan/shiny/).
