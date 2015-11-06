@@ -56,6 +56,14 @@ docker run -d -p 80:3838 -p 8787:8787 \
   shrektan/shiny
 docker exec -d shinyserver sh /usr/bin/rstudio-server.sh
 ```
+2. modify the `PATH` environment variable in shiny (I haven't figured out how to avoid this)
+```bash
+sudo vi /etc/profile
+```
+add the following line:
+```bash
+export PATH=$PATH:/usr/local/texlive/2014/bin/x86_64-linux/
+```
 
 ## Trademarks
 
