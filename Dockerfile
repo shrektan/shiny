@@ -72,6 +72,7 @@ RUN install2.r --error \
   && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 # Github version packages
+RUN R -e "devtools::install_github('rstudio/d3heatmap')"
 RUN R -e "devtools::install_github('Rdatatable/data.table')"
 RUN R -e "devtools::install_github('rstudio/DT')"
 RUN R -e "devtools::install_github('cttobin/ggthemr')"
