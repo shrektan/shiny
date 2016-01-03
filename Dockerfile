@@ -76,6 +76,8 @@ RUN install2.r --error \
 RUN R -e "devtools::install_github('rstudio/d3heatmap')"
 RUN R -e "devtools::install_github('Rdatatable/data.table')"
 RUN R -e "devtools::install_github('rstudio/DT')"
+RUN R -e "devtools::install_github('hadley/ggplot2')"
+RUN R -e "devtools::install_github('jrnold/ggthemes')"
 RUN R -e "devtools::install_github('cttobin/ggthemr')"
 RUN R -e "devtools::install_github('hadley/httr')"
 RUN R -e "devtools::install_github('hadley/purrr')"
