@@ -37,8 +37,7 @@ COPY shiny-server.sh /usr/bin/shiny-server.sh
 
 # Install Database related apt
 RUN apt-get update && apt-get install -y \
-    libaio1 \
-    unixODBC-dev
+    libaio1
 
 # CRAN version packages
 
@@ -66,7 +65,6 @@ RUN install2.r --error \
     shinythemes \
     shinydashboard \
     stringr \
-    RODBC \
     V8 \
     xtable \
     xts \
