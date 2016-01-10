@@ -64,6 +64,7 @@ RUN install2.r --error \
     shiny \
     shinythemes \
     shinydashboard \
+    showtext \
     stringr \
     V8 \
     xtable \
@@ -87,7 +88,6 @@ RUN R -e "devtools::install_github('rstudio/shiny')"
 RUN R -e "devtools::install_github('ebailey78/shinyBS', ref = 'shinyBS3')"
 RUN R -e "devtools::install_github('daattali/shinyjs')"
 RUN R -e "devtools::install_github('trestletech/shinyStore')"
-RUN R -e "devtools::install_github('yixuan/showtext')"
 
 # Make semi ENTRYPOINT
 COPY rstudio-server.sh /usr/bin/rstudio-server.sh
