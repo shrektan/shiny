@@ -44,6 +44,7 @@ RUN apt-get update && apt-get install -y \
 # install2.r is an cmd of linux by import litter. If the package is not available in CRAN, it will stop.
 
 RUN install2.r --error \
+    assertthat \
     dendextend \
     dygraphs \
     DiagrammeR \
