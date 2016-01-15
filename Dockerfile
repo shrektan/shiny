@@ -25,14 +25,6 @@ RUN wget --no-verbose https://s3.amazonaws.com/rstudio-shiny-server-os-build/ubu
     gdebi -n ss-latest.deb && \
     rm -f version.txt ss-latest.deb
 
-RUN R -e "install.packages(c('shiny', 'rmarkdown'), repos='https://cran.rstudio.com/')"
-
-RUN cp -R /usr/local/lib/R/site-library/shiny/examples/* /srv/shiny-server/
-
-EXPOSE 3838
-
-COPY shiny-server.sh /usr/bin/shiny-server.sh
-
 # Shrek's own working environment
 
 # Install Database related apt
@@ -62,7 +54,6 @@ RUN install2.r --error \
     RJDBC \
     RJSONIO \
     rmarkdown \
-    shiny \
     shinythemes \
     shinydashboard \
     showtext \
@@ -92,6 +83,12 @@ RUN R -e "devtools::install_github('trestletech/shinyStore')"
 
 # Make semi ENTRYPOINT
 COPY rstudio-server.sh /usr/bin/rstudio-server.sh
+
+RUN cp -R /usr/local/lib/R/site-library/shiny/examples/* /srv/shiny-server/
+
+EXPOSE 3838
+
+COPY shiny-server.sh /usr/bin/shiny-server.sh
 
 CMD ["/usr/bin/shiny-server.sh"]
 
