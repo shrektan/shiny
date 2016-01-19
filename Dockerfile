@@ -41,6 +41,7 @@ RUN install2.r --error \
     dygraphs \
     DiagrammeR \
     ggthemes \
+    infuser \
     jsonlite \
     knitr \
     leaflet \
