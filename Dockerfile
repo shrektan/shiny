@@ -67,6 +67,7 @@ RUN install2.r --error \
 # Github version packages
 RUN R -e "devtools::install_github('rstudio/d3heatmap')"
 RUN R -e "devtools::install_github('Rdatatable/data.table')"
+RUN R -e "devtools::install_github('gluc/data.tree')"
 RUN R -e "devtools::install_github('rstudio/DT')"
 RUN R -e "devtools::install_github('renkun-ken/formattable')"
 RUN R -e "devtools::install_github('hadley/ggplot2')"
