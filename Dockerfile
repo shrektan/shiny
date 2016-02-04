@@ -75,6 +75,7 @@ RUN R -e "devtools::install_github('slowkow/ggrepel')"
 RUN R -e "devtools::install_github('jrnold/ggthemes')"
 RUN R -e "devtools::install_github('cttobin/ggthemr')"
 RUN R -e "devtools::install_github('hadley/httr')"
+RUN R -e "devtools::install_github('hrbrmstr/metricsgraphics')"
 RUN R -e "devtools::install_github('hadley/purrr')"
 RUN R -e "devtools::install_github('hadley/readr')"
 RUN R -e "devtools::install_github('imanuelcostigan/RSQLServer')"
@@ -82,6 +83,7 @@ RUN R -e "devtools::install_github('rstudio/shiny')"
 RUN R -e "devtools::install_github('ebailey78/shinyBS', ref = 'shinyBS3')"
 RUN R -e "devtools::install_github('daattali/shinyjs')"
 RUN R -e "devtools::install_github('trestletech/shinyStore')"
+RUN R -e "devtools::install_github('hrbrmstr/streamgraph')"
 
 # Make semi ENTRYPOINT
 COPY rstudio-server.sh /usr/bin/rstudio-server.sh
