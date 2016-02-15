@@ -40,6 +40,7 @@ RUN install2.r --error \
     dendextend \
     dygraphs \
     DiagrammeR \
+    forecast \
     ggthemes \
     infuser \
     jsonlite \
