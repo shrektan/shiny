@@ -49,6 +49,7 @@ RUN install2.r --error \
     lubridate \
     mailR \
     openxlsx \
+    pander \
     PerformanceAnalytics \
     PKI \
     R6 \
