@@ -5,13 +5,8 @@ MAINTAINER Shrek Tan "shrektan@126.com"
 # Winston Chang's shiny server code
 
 RUN apt-get update && apt-get install -y -t unstable \
-    sudo \
     gdebi-core \
-    pandoc \
-    pandoc-citeproc \
-    libcurl4-gnutls-dev \
-    libcairo2-dev/unstable \
-    libxt-dev
+    libcurl4-gnutls-dev
 
 # Download and install shiny server
 RUN wget --no-verbose https://s3.amazonaws.com/rstudio-shiny-server-os-build/ubuntu-12.04/x86_64/VERSION -O "version.txt" && \
