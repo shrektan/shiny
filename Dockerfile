@@ -83,6 +83,7 @@ RUN R -e "devtools::install_github('daattali/shinyjs')"
 RUN R -e "devtools::install_github('trestletech/shinyStore')"
 RUN R -e "devtools::install_github('hrbrmstr/streamgraph')"
 RUN R -e "devtools::install_github('hadley/svglite')"
+RUN R -e "devtools::install_github('wilkox/treemapify')"
 
 # Make semi ENTRYPOINT
 COPY rstudio-server.sh /usr/bin/rstudio-server.sh
