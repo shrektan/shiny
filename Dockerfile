@@ -69,7 +69,7 @@ RUN install2.r --error \
 RUN R -e "devtools::install_github('rstudio/d3heatmap')"
 RUN R -e "devtools::install_github('Rdatatable/data.table')"
 RUN R -e "devtools::install_github('gluc/data.tree', ref = 'dev')"
-# RUN R -e "devtools::install_github('hadley/dplyr')"
+RUN R -e "devtools::install_github('hadley/dplyr')"
 RUN R -e "devtools::install_github('rstudio/DT')"
 RUN R -e "devtools::install_github('rstudio/flexdashboard')"
 RUN R -e "devtools::install_github('renkun-ken/formattable')"
