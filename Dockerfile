@@ -58,7 +58,9 @@ RUN install2.r --error \
     shinydashboard \
     showtext \
     stringr \
+    treemap \
     V8 \
+    viridisLite \
     xtable \
     xts \
   && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
@@ -69,6 +71,7 @@ RUN R -e "devtools::install_github('Rdatatable/data.table')"
 RUN R -e "devtools::install_github('gluc/data.tree', ref = 'dev')"
 # RUN R -e "devtools::install_github('hadley/dplyr')"
 RUN R -e "devtools::install_github('rstudio/DT')"
+RUN R -e "devtools::install_github('rstudio/flexdashboard')"
 RUN R -e "devtools::install_github('renkun-ken/formattable')"
 RUN R -e "devtools::install_github('hadley/ggplot2')"
 RUN R -e "devtools::install_github('slowkow/ggrepel')"
