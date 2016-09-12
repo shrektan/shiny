@@ -1,6 +1,8 @@
 Docker for Shiny Server
 =======================
 
+[![](https://images.microbadger.com/badges/image/shrektan/shiny.svg)](https://microbadger.com/images/shrektan/shiny "Get your own image badge on microbadger.com")
+
 It's an antomated build docker image from [Github shrektan/shiny](https://github.com/shrektan/shiny).
 
 This is a Dockerfile of my own working environment, which is based on rocker/shiny and rocker/hadleyverse. 
