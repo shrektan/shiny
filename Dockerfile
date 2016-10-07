@@ -33,10 +33,12 @@ RUN apt-get update && apt-get install -y \
 
 RUN install2.r --error \
     assertthat \
+    DBI \
     dendextend \
     dygraphs \
     DiagrammeR \
     extrafont \
+    forcats \
     forecast \
     ggthemes \
     infuser \
@@ -50,14 +52,19 @@ RUN install2.r --error \
     PerformanceAnalytics \
     PKI \
     R6 \
+    packrat \
     RColorBrewer \
     RJDBC \
     RJSONIO \
+    RPostgreSQL \
     rmarkdown \
     shinythemes \
     shinydashboard \
     showtext \
     stringr \
+    testthat \
+    tibble \
+    tidyverse \
     treemap \
     V8 \
     viridisLite \
@@ -66,12 +73,14 @@ RUN install2.r --error \
   && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 # Github version packages
+RUN R -e "devtools::install_github('rstudio/bookdown')"
 RUN R -e "devtools::install_github('rstudio/d3heatmap')"
 RUN R -e "devtools::install_github('Rdatatable/data.table')"
 RUN R -e "devtools::install_github('gluc/data.tree', ref = 'dev')"
 RUN R -e "devtools::install_github('hadley/dplyr')"
 # RUN R -e "install.packages('https://cran.rstudio.com/src/contrib/Archive/dplyr/dplyr_0.4.3.tar.gz', repos = NULL, type = 'source')"
 RUN R -e "devtools::install_github('rstudio/DT')"
+RUN R -e "devtools::install_github('hadley/dtplyr')"
 RUN R -e "devtools::install_github('rstudio/flexdashboard')"
 RUN R -e "devtools::install_github('renkun-ken/formattable')"
 RUN R -e "devtools::install_github('hadley/ggplot2')"
@@ -86,6 +95,7 @@ RUN R -e "devtools::install_github('hadley/httr')"
 RUN R -e "devtools::install_github('hrbrmstr/metricsgraphics')"
 RUN R -e "devtools::install_github('hadley/purrr')"
 RUN R -e "devtools::install_github('hadley/readr')"
+RUN R -e "devtools::install_github('rstudio/rmarkdown')"
 # RUN R -e "install.packages('RSQLServer')"
 RUN R -e "devtools::install_github('imanuelcostigan/RSQLServer')"
 RUN R -e "devtools::install_github('rstudio/shiny')"
