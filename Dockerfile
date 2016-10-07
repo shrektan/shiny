@@ -73,38 +73,39 @@ RUN install2.r --error \
   && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 # Github version packages
-RUN R -e "devtools::install_github('rstudio/bookdown')"
-RUN R -e "devtools::install_github('rstudio/d3heatmap')"
-RUN R -e "devtools::install_github('Rdatatable/data.table')"
-RUN R -e "devtools::install_github('gluc/data.tree', ref = 'dev')"
-RUN R -e "devtools::install_github('hadley/dplyr')"
+RUN R -e " \
+devtools::install_github('rstudio/bookdown'); \
+devtools::install_github('rstudio/d3heatmap'); \
+devtools::install_github('Rdatatable/data.table'); \
+devtools::install_github('gluc/data.tree', ref = 'dev'); \
+devtools::install_github('hadley/dplyr'); \
+devtools::install_github('rstudio/DT'); \
+devtools::install_github('hadley/dtplyr'); \
+devtools::install_github('rstudio/flexdashboard'); \
+devtools::install_github('renkun-ken/formattable'); \
+devtools::install_github('hadley/ggplot2'); \
+devtools::install_github('slowkow/ggrepel'); \
+devtools::install_github('jrnold/ggthemes'); \
+devtools::install_github('Ather-Energy/ggTimeSeries'); \
+devtools::install_github('ricardo-bion/ggradar'); \
+devtools::install_github('jbkunst/highcharter'); \
+devtools::install_github('ramnathv/htmlwidgets'); \
+devtools::install_github('hadley/httr'); \
+devtools::install_github('hrbrmstr/metricsgraphics'); \
+devtools::install_github('hadley/purrr'); \
+devtools::install_github('hadley/readr'); \
+devtools::install_github('rstudio/rmarkdown'); \
+devtools::install_github('imanuelcostigan/RSQLServer'); \
+devtools::install_github('rstudio/shiny'); \
+devtools::install_github('ebailey78/shinyBS', ref = 'shinyBS3'); \
+devtools::install_github('daattali/shinyjs'); \
+devtools::install_github('trestletech/shinyStore'); \
+devtools::install_github('hrbrmstr/streamgraph'); \
+devtools::install_github('hadley/svglite'); \
+devtools::install_github('wilkox/treemapify'); \
+"
 # RUN R -e "install.packages('https://cran.rstudio.com/src/contrib/Archive/dplyr/dplyr_0.4.3.tar.gz', repos = NULL, type = 'source')"
-RUN R -e "devtools::install_github('rstudio/DT')"
-RUN R -e "devtools::install_github('hadley/dtplyr')"
-RUN R -e "devtools::install_github('rstudio/flexdashboard')"
-RUN R -e "devtools::install_github('renkun-ken/formattable')"
-RUN R -e "devtools::install_github('hadley/ggplot2')"
-RUN R -e "devtools::install_github('slowkow/ggrepel')"
-RUN R -e "devtools::install_github('jrnold/ggthemes')"
 # RUN R -e "devtools::install_github('sainathadapa/ggthemr')"
-RUN R -e "devtools::install_github('Ather-Energy/ggTimeSeries')"
-RUN R -e "devtools::install_github('ricardo-bion/ggradar')"
-RUN R -e "devtools::install_github('jbkunst/highcharter')"
-RUN R -e "devtools::install_github('ramnathv/htmlwidgets')"
-RUN R -e "devtools::install_github('hadley/httr')"
-RUN R -e "devtools::install_github('hrbrmstr/metricsgraphics')"
-RUN R -e "devtools::install_github('hadley/purrr')"
-RUN R -e "devtools::install_github('hadley/readr')"
-RUN R -e "devtools::install_github('rstudio/rmarkdown')"
-# RUN R -e "install.packages('RSQLServer')"
-RUN R -e "devtools::install_github('imanuelcostigan/RSQLServer')"
-RUN R -e "devtools::install_github('rstudio/shiny')"
-RUN R -e "devtools::install_github('ebailey78/shinyBS', ref = 'shinyBS3')"
-RUN R -e "devtools::install_github('daattali/shinyjs')"
-RUN R -e "devtools::install_github('trestletech/shinyStore')"
-RUN R -e "devtools::install_github('hrbrmstr/streamgraph')"
-RUN R -e "devtools::install_github('hadley/svglite')"
-RUN R -e "devtools::install_github('wilkox/treemapify')"
 
 # Make semi ENTRYPOINT
 COPY rstudio-server.sh /usr/bin/rstudio-server.sh
