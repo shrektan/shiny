@@ -15,9 +15,9 @@ I'm still working on it. Things will change!
 
 ## What's inside
 
-- shiny server
-- rstudio server
-- database connection, including rsqlserver (using rjdbc), ROracle (with Oracle instant client), RODBC (with unixODBC)
+- Shiny Server
+- Rstudio Server
+- Database connection, currently only `RSQLServer`. For `ROracle` (using Oracle instant client), you have to do it manually, because I don't have the time to figure out how to download the instant client automatically (you can send me an email if you don't know how to do it, my email is shrektan@126.com). 
 
 ## The goal
 
@@ -32,8 +32,8 @@ Related to database connection, the `RJDBC` is ok. However, `ROracle` cannot be 
 ## Usage:
 
 1. Pull the docker image via `docker pull shrektan/shiny`.
-1. Run the code below:
-```sh
+1. Run the code below:  
+```
 docker run -d -p 80:3838 -p 8787:8787 \
   -v /Users/Flynn/Documents/RWD/shiny-apps/:/srv/shiny-server/ \
   -v /Users/Flynn/Documents/RWD/shinylog/:/var/log/ \
@@ -47,8 +47,8 @@ The last line of code is to run the rstudio-server. If you only need shiny-serve
 
 1. Pull the docker image cboettig/texlive, code `docker pull cboettig/texlive:latest`
 1. Run a texlive container like this `docker run --name tex -v /usr/local/texlive cboettig/texlive`. Note, it usually takes about 30 seconds.
-1. Run our image with a container linking.
-```sh
+1. Run our image with a container linking.  
+```
 docker run -d -p 80:3838 -p 8787:8787 \
   --volumes-from tex \
   -e PATH=$PATH:/usr/local/texlive/2014/bin/x86_64-linux/ \
@@ -58,15 +58,11 @@ docker run -d -p 80:3838 -p 8787:8787 \
   shrektan/shiny
 docker exec -d shinyserver sh /usr/bin/rstudio-server.sh
 ```
-2. modify the `PATH` environment variable in shiny (I haven't figured out how to avoid this)
-```bash
+1. modify the `PATH` environment variable in shiny (I haven't figured out how to avoid this)
+```
 sudo vi /etc/profile
 ```
-add the following line:
-```bash
+1. add the following line:  
+```
 export PATH=$PATH:/usr/local/texlive/2014/bin/x86_64-linux/
 ```
-
-## Trademarks
-
-Shiny and Shiny Server are registered trademarks of RStudio, Inc. The use of the trademarked terms Shiny and Shiny Server and the distribution of the Shiny Server through the images hosted on hub.docker.com has been granted by explicit permission of RStudio. Please review RStudio's trademark use policy and address inquiries about further distribution or other questions to permissions@rstudio.com.
