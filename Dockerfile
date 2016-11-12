@@ -2,6 +2,10 @@ FROM rocker/hadleyverse:latest
 
 MAINTAINER Shrek Tan "shrektan@126.com"
 
+# RQuantLib which needs to install QuantLib & boost first
+RUN apt-get update && apt-get install --fix-missing -y apt-utils libquantlib0-dev
+RUN install2.r --error RQuantLib && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
+
 # Winston Chang's shiny server code
 
 RUN apt-get update && apt-get install -y -t unstable \
