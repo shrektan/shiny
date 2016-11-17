@@ -2,9 +2,6 @@ FROM rocker/hadleyverse:latest
 
 MAINTAINER Shrek Tan "shrektan@126.com"
 
-# RQuantLib which needs to install QuantLib & boost first
-RUN apt-get update && apt-get install --fix-missing -y r-cran-rquantlib
-
 # Winston Chang's shiny server code
 
 RUN apt-get update && apt-get install -y -t unstable \
@@ -109,6 +106,11 @@ devtools::install_github('wilkox/treemapify'); \
 "
 # RUN R -e "install.packages('https://cran.rstudio.com/src/contrib/Archive/dplyr/dplyr_0.4.3.tar.gz', repos = NULL, type = 'source')"
 # RUN R -e "devtools::install_github('sainathadapa/ggthemr')"
+
+# RQuantLib which needs to install QuantLib & boost first
+RUN apt-get update && apt-get install --fix-missing -y r-cran-rquantlib
+RUN apt-get autoremove
+
 
 # Make semi ENTRYPOINT
 COPY rstudio-server.sh /usr/bin/rstudio-server.sh
