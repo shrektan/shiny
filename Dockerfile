@@ -4,7 +4,8 @@ MAINTAINER Shrek Tan "shrektan@126.com"
 
 # Winston Chang's shiny server code
 
-RUN apt-get update && apt-get install -y -t \
+RUN apt-get update && apt-get install -y -t unstable \
+    sudo \
     gdebi-core \
     pandoc \
     pandoc-citeproc \
