@@ -2,16 +2,23 @@ FROM rocker/hadleyverse:latest
 
 MAINTAINER Shrek Tan "shrektan@126.com"
 
+# RQuantLib which needs to install QuantLib & boost first
+RUN apt-get update && apt-get install --fix-missing  -y --no-install-recommends r-cran-rquantlib
+RUN apt-get autoremove
+
 # Winston Chang's shiny server code
 
-RUN apt-get update && apt-get install -y -t unstable \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     sudo \
     gdebi-core \
     pandoc \
     pandoc-citeproc \
     libcurl4-gnutls-dev \
     libcairo2-dev/unstable \
-    libxt-dev
+    libxt-dev \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/ \
+    && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 # Download and install shiny server
 RUN wget --no-verbose https://s3.amazonaws.com/rstudio-shiny-server-os-build/ubuntu-12.04/x86_64/VERSION -O "version.txt" && \
@@ -107,10 +114,6 @@ devtools::install_github('wilkox/treemapify'); \
 "
 # RUN R -e "install.packages('https://cran.rstudio.com/src/contrib/Archive/dplyr/dplyr_0.4.3.tar.gz', repos = NULL, type = 'source')"
 # RUN R -e "devtools::install_github('sainathadapa/ggthemr')"
-
-# RQuantLib which needs to install QuantLib & boost first
-RUN apt-get update && apt-get install --fix-missing -y r-cran-rquantlib
-RUN apt-get autoremove
 
 
 # Make semi ENTRYPOINT
