@@ -3,8 +3,8 @@ FROM rocker/hadleyverse:latest
 MAINTAINER Shrek Tan "shrektan@126.com"
 
 # RQuantLib which needs to install QuantLib & boost first
-RUN apt-get update && apt-get install --fix-missing  -y --no-install-recommends r-cran-rquantlib
-RUN apt-get autoremove
+# RUN apt-get update && apt-get install --fix-missing  -y --no-install-recommends r-cran-rquantlib
+# RUN apt-get autoremove
 
 # Winston Chang's shiny server code
 
