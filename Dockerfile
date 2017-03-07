@@ -39,6 +39,7 @@ RUN install2.r --error \
     dygraphs \
     DiagrammeR \
     extrafont \
+    feather \
     forcats \
     forecast \
     ggthemes \
@@ -59,6 +60,7 @@ RUN install2.r --error \
     RJSONIO \
     RPostgreSQL \
     rmarkdown \
+    rvest \
     shinythemes \
     shinydashboard \
     showtext \
@@ -69,6 +71,7 @@ RUN install2.r --error \
     treemap \
     V8 \
     viridisLite \
+    xml2 \
     xtable \
     xts \
   && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
