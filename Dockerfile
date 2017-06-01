@@ -46,6 +46,7 @@ RUN install2.r --error \
     dygraphs \
     DiagrammeR \
     extrafont \
+    feather \
     forcats \
     forecast \
     ggthemes \
@@ -66,6 +67,7 @@ RUN install2.r --error \
     RJSONIO \
     RPostgreSQL \
     rmarkdown \
+    rvest \
     shinythemes \
     shinydashboard \
     showtext \
@@ -76,6 +78,7 @@ RUN install2.r --error \
     treemap \
     V8 \
     viridisLite \
+    xml2 \
     xtable \
     xts \
   && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
@@ -111,6 +114,8 @@ devtools::install_github('trestletech/shinyStore'); \
 devtools::install_github('hrbrmstr/streamgraph'); \
 devtools::install_github('hadley/svglite'); \
 devtools::install_github('wilkox/treemapify'); \
+devtools::install_github('joshuaulrich/xts'); \
+devtools::install_github('trestletech/shinyStore');
 "
 # RUN R -e "install.packages('https://cran.rstudio.com/src/contrib/Archive/dplyr/dplyr_0.4.3.tar.gz', repos = NULL, type = 'source')"
 # RUN R -e "devtools::install_github('sainathadapa/ggthemr')"
