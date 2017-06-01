@@ -19,6 +19,7 @@ I'm still working on it. Things will change!
 - Rstudio Server
 - Database connection, currently only `RSQLServer`. For `ROracle` (using Oracle instant client), you have to do it manually, because I don't have the time to figure out how to download the instant client automatically (you can send me an email if you don't know how to do it, my email is shrektan@126.com). 
 
+
 ## The goal
 
 I will try to establish a clear and handy working process to establish the R working environment (maybe not suitable for everyone, but at least it would be kind of suitable for people who're working in the financial industry).
@@ -26,6 +27,12 @@ I will try to establish a clear and handy working process to establish the R wor
 ## Process
 
 Currently, the image can run the shiny-server by default. If you need to run rstudio-server, you need one more line by manual.
+```sh
+docker run -d -p 80:3838 \
+    -v /srv/shinyapps/:/srv/shiny-server/ \
+    -v /srv/shinylog/:/var/log/shiny-server/ \
+    rocker/shiny
+```
 
 Related to database connection, the `RJDBC` is ok. However, `ROracle` cannot be achieved through an automated building, because the Oracle instant client can't be downloaded automatically. I'll create a new branch with dockerfile to build the ROracle available image manually (probably need to download the Oracle instant client by hand and put in some folder). For `RODBC`, although I've installed the `unixODBC`, I still can't connect to database through `RODBC` and I have no idea at all. But I believe it's fixable as long as I have the time.
 
