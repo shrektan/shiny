@@ -112,7 +112,7 @@ devtools::install_github('hrbrmstr/streamgraph'); \
 devtools::install_github('hadley/svglite'); \
 devtools::install_github('wilkox/treemapify'); \
 devtools::install_github('joshuaulrich/xts'); \
-devtools::install_github('trestletech/shinyStore');
+devtools::install_github('trestletech/shinyStore'); \
 "
 # RUN R -e "install.packages('https://cran.rstudio.com/src/contrib/Archive/dplyr/dplyr_0.4.3.tar.gz', repos = NULL, type = 'source')"
 # RUN R -e "devtools::install_github('sainathadapa/ggthemr')"
