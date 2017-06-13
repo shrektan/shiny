@@ -1,4 +1,4 @@
-FROM rocker/hadleyverse:latest
+FROM rocker/verse:latest
 
 MAINTAINER Shrek Tan "shrektan@126.com"
 
@@ -119,7 +119,7 @@ devtools::install_github('trestletech/shinyStore');
 
 
 # Make semi ENTRYPOINT
-COPY rstudio-server.sh /usr/bin/rstudio-server.sh
+# COPY rstudio-server.sh /usr/bin/rstudio-server.sh
 
 EXPOSE 3838
 
