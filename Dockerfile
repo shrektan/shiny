@@ -9,7 +9,7 @@ MAINTAINER Shrek Tan "shrektan@126.com"
 # Winston Chang's shiny server code
 
 # Install dependencies and Download and install shiny server
-RUN apt-get update && apt-get install -y -t unstable \
+RUN apt-get update && apt-get install -y -t \
     sudo \
     gdebi-core \
     pandoc \
