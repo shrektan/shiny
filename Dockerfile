@@ -9,8 +9,7 @@ MAINTAINER Shrek Tan "shrektan@126.com"
 # Winston Chang's shiny server code
 
 # Install dependencies and Download and install shiny server
-RUN apt-get update && apt-get install -y -t \
-    sudo \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     gdebi-core \
     pandoc \
     pandoc-citeproc \
@@ -29,7 +28,7 @@ RUN apt-get update && apt-get install -y -t \
 # Shrek's own working environment
 
 # Install Database related apt
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     libaio1
 
 # CRAN version packages
