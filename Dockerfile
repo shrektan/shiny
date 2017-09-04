@@ -36,6 +36,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 RUN install2.r --error \
     assertthat \
+    covr \
     DBI \
     dendextend \
     dygraphs \
@@ -57,10 +58,13 @@ RUN install2.r --error \
     PKI \
     R6 \
     packrat \
+    RcppArmadillo \
     RColorBrewer \
     RJDBC \
     RJSONIO \
+    pkgconfig \
     RPostgreSQL \
+    progress \
     rmarkdown \
     rvest \
     shinythemes \
