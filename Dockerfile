@@ -39,13 +39,19 @@ RUN install2.r --error \
     covr \
     DBI \
     dendextend \
+    dplyr \
+    dtplyr \
+    drat \
     dygraphs \
     DiagrammeR \
     extrafont \
     feather \
     forcats \
     forecast \
+    ggplot2 \
     ggthemes \
+    ggrepel \
+    ggpubr \
     infuser \
     jsonlite \
     knitr \
@@ -64,8 +70,11 @@ RUN install2.r --error \
     RJSONIO \
     pkgconfig \
     RPostgreSQL \
+    RcppArmadillo \
+    purrr \
     progress \
     rmarkdown \
+    rlang \
     rvest \
     shinythemes \
     shinydashboard \
@@ -88,13 +97,10 @@ devtools::install_github('rstudio/bookdown'); \
 devtools::install_github('rstudio/d3heatmap'); \
 devtools::install_github('Rdatatable/data.table'); \
 devtools::install_github('gluc/data.tree', ref = 'dev'); \
-devtools::install_github('hadley/dplyr'); \
 devtools::install_github('rstudio/DT'); \
-devtools::install_github('hadley/dtplyr'); \
+devtools::install_github('rstudio/pool'); \
 devtools::install_github('rstudio/flexdashboard'); \
 devtools::install_github('renkun-ken/formattable'); \
-devtools::install_github('hadley/ggplot2'); \
-devtools::install_github('slowkow/ggrepel'); \
 devtools::install_github('jrnold/ggthemes'); \
 devtools::install_github('Ather-Energy/ggTimeSeries'); \
 devtools::install_github('ricardo-bion/ggradar'); \
@@ -102,7 +108,6 @@ devtools::install_github('jbkunst/highcharter'); \
 devtools::install_github('ramnathv/htmlwidgets'); \
 devtools::install_github('hadley/httr'); \
 devtools::install_github('hrbrmstr/metricsgraphics'); \
-devtools::install_github('hadley/purrr'); \
 devtools::install_github('hadley/readr'); \
 devtools::install_github('rstudio/rmarkdown'); \
 devtools::install_github('imanuelcostigan/RSQLServer'); \
