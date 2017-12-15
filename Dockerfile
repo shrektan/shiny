@@ -86,6 +86,7 @@ RUN install2.r --error \
     treemap \
     V8 \
     viridisLite \
+    writexl \
     xml2 \
     xtable \
     xts \
