@@ -48,6 +48,7 @@ RUN install2.r --error \
     feather \
     forcats \
     forecast \
+    fst \
     ggplot2 \
     ggthemes \
     ggrepel \
