@@ -88,6 +88,7 @@ RUN install2.r --error \
     V8 \
     viridisLite \
     whoami \
+    withr \
     writexl \
     xml2 \
     xtable \
