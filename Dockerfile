@@ -36,9 +36,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 RUN install2.r --error \
     assertthat \
+    bookdown \
+    blogdown \
     covr \
+    d3heatmap \
     DBI \
+    data.tree \
     dendextend \
+    debugme \
     dplyr \
     dtplyr \
     drat \
@@ -46,13 +51,19 @@ RUN install2.r --error \
     DiagrammeR \
     extrafont \
     feather \
+    flexdashboard \
+    formattable \
     forcats \
     forecast \
+    fs \
     fst \
     ggplot2 \
     ggthemes \
     ggrepel \
     ggpubr \
+    highcharter \
+    htmlwidgets \
+    httr \
     infuser \
     jsonlite \
     knitr \
@@ -63,28 +74,35 @@ RUN install2.r --error \
     pander \
     PerformanceAnalytics \
     PKI \
-    R6 \
     packrat \
+    pkgconfig \
+    pool \
+    progress \
+    purrr \
+    R6 \
     RcppArmadillo \
     RColorBrewer \
+    readr \
     RJDBC \
     RJSONIO \
-    pkgconfig \
     RPostgreSQL \
     RcppArmadillo \
-    purrr \
-    progress \
+    RSQLServer \
     rmarkdown \
     rlang \
     rvest \
+    shiny \
+    shinyjs \
     shinythemes \
     shinydashboard \
     showtext \
     stringr \
+    svglite \
     testthat \
     tibble \
     tidyverse \
     treemap \
+    usethis \
     V8 \
     viridisLite \
     whoami \
@@ -97,33 +115,15 @@ RUN install2.r --error \
 
 # Github version packages
 RUN R -e " \
-devtools::install_github('rstudio/bookdown'); \
-devtools::install_github('rstudio/d3heatmap'); \
 devtools::install_github('Rdatatable/data.table'); \
-devtools::install_github('gluc/data.tree', ref = 'dev'); \
 devtools::install_github('rstudio/DT'); \
-devtools::install_github('rstudio/pool'); \
-devtools::install_github('rstudio/flexdashboard'); \
-devtools::install_github('renkun-ken/formattable'); \
-devtools::install_github('jrnold/ggthemes'); \
 devtools::install_github('Ather-Energy/ggTimeSeries'); \
 devtools::install_github('ricardo-bion/ggradar'); \
-devtools::install_github('jbkunst/highcharter'); \
-devtools::install_github('ramnathv/htmlwidgets'); \
-devtools::install_github('hadley/httr'); \
 devtools::install_github('hrbrmstr/metricsgraphics'); \
-devtools::install_github('hadley/readr'); \
-devtools::install_github('rstudio/rmarkdown'); \
-devtools::install_github('imanuelcostigan/RSQLServer'); \
-devtools::install_github('rstudio/shiny'); \
 devtools::install_github('ebailey78/shinyBS', ref = 'shinyBS3'); \
-devtools::install_github('daattali/shinyjs'); \
 devtools::install_github('trestletech/shinyStore'); \
 devtools::install_github('hrbrmstr/streamgraph'); \
-devtools::install_github('hadley/svglite'); \
 devtools::install_github('wilkox/treemapify'); \
-devtools::install_github('joshuaulrich/xts'); \
-devtools::install_github('trestletech/shinyStore'); \
 "
 # RUN R -e "install.packages('https://cran.rstudio.com/src/contrib/Archive/dplyr/dplyr_0.4.3.tar.gz', repos = NULL, type = 'source')"
 # RUN R -e "devtools::install_github('sainathadapa/ggthemr')"
