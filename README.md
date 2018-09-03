@@ -1,3 +1,8 @@
+# This Repo / Docker Image Has Been Archived
+
+Please use [shrektan/rdocker4shinyserver](https://github.com/shrektan/rdocker) instead.
+
+
 Docker for Shiny Server
 =======================
 
